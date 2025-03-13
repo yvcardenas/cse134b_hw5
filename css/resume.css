@@ -1,0 +1,39 @@
+main{
+    margin: 2em;
+    padding: 1em;
+    color: var(--text-color);
+}
+
+.title {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.skills table {
+    width: 100%;
+    font-size: 1rem;
+}
+
+section:has(h2, h3) {
+    background-color: var(--main-bg-color);
+    background-color: color-mix(in srgb, var(--main-bg-color) 60%, white 40%);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries for MOBILE */
+@media (max-width: 950px) {
+    main{
+        flex-direction: column;
+    }
+}
+
+footer{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}

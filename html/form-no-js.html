@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Form - HTML/CSS Only Validation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../media/slogoblack.png"/>
+    <link rel="stylesheet" href="/css/contact.css">
+</head>
+<body>
+    <section class="contact-form-container">
+        <h2>Let's Connect! </h2>
+        <p>I am open to discussing opportunities, sharing ideas, or just talking about how technology will shape the future.</p>
+        <form action="https://httpbin.org/post" method="POST">
+            <input type="hidden" name="possible_bot" value="true">
+            <div class="form-field">
+                <label for="fname">First Name <span class="required">*</span></label>
+                <input type="text" id="fname" name="firstname" required minlength="1" maxlength="30" pattern="[A-Za-z\s]+" placeholder="Jane">
+            </div>
+            <div class="form-field">
+                <label for="lname">Last Name <span class="required">*</span></label>
+                <input type="text" id="lname" name="lastname" required minlength="1" maxlength="30" pattern="[A-za-z\s]+" placeholder="Doe">
+            </div>
+            <div class="form-field">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="jane.doe@example.com">
+            </div>
+            <div class="form-field">
+                <label for="comments">Comments <span class="required">*</span></label>
+                <textarea type="message" id="message" name="message" rows="5" required minlength="5" maxlength="300" placeholder="Your comments .."></textarea>
+            </div>
+            <button type="submit" class="sumbit-button">Send Message!</button>
+
+            <!-- Output Elements -->
+            <output id="errorOutput" class="error-message" aria-live="polite"></output>
+            <output id="infoOutput" class="info-message" aria-live="polite"></output>
+        </form>
+        <div class="links">
+            <a href="https://github.com/yvcardenas" target="_blank">
+                <img src="../media/githublogo.png" alt="GitHub Logo" class="contact-logo">
+            </a>
+
+            <a href="https://www.linkedin.com/in/y-cardenas/" target="_blank">
+                <img src="../media/linkedinlogo.png" alt="LinkedIn Logo" class="contact-logo">
+            </a>
+
+            <a href="mailto:yvcardenas@ucsd.edu" target="_blank">
+                <img src="../media/emaillogo.png" alt="Email Logo" class="contact-logo">
+            </a>
+        </div>
+    </section>
+</body>
+</html>
