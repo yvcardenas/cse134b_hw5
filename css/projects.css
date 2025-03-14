@@ -6,9 +6,18 @@ main > section {
 
     h2{
         text-align: center;
-        font-size: 3em;
+        font-size: 2.5em;
         margin-bottom: 1.5rem;
         color: var(--text-color);
+    }
+
+    #projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 1rem;
+        justify-content: center;
+        width: 50%;
+        margin: 0 auto;
     }
 
     ul {

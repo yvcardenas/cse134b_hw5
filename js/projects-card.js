@@ -9,15 +9,15 @@ class ProjectsCard extends HTMLElement {
         template.innerHTML = `
             <style>
                 :host {
-                    display: block;
-                    background-color: var(--main-bg-color, white);
+                    background-color: color-mix(in srgb, var(--main-bg-color, #FFF0F5) 40%, white 60%);
                     border: 1px solid black;
                     border-radius: 10px;
                     padding: 1rem;
                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                     transition: transform 0.3s ease;
                     text-align: center;
-                    max-width: 300px;
+                    max-width: 400px;
+                    display: block; 
                 }
                 :host(:hover) {
                     transform: translateY(-5px);
