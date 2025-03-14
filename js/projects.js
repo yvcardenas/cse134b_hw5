@@ -1,16 +1,16 @@
 // Implement a custom element for the projects page that fetches and displays the projects from the API
 document.addEventListener('DOMContentLoaded', () => {
-    const projectsContainer = document.querySelector('main > section ul');
+    const projectsContainer = document.querySelector('#projects-container');
     projectsContainer.innerHTML = '';
 
     const remoteDataURL = '/data/projects.json';
 
     function createProjectCard(project){
-        const card = document.createElement('project-card');
+        const card = document.createElement('projects-card');
         card.setAttribute('title', project.title);
+        card.setAttribute('image', project.image);
         card.setAttribute('description', project.description);
         card.setAttribute('link', project.link);
-        card.setAttribute('image', project.image);
         projectsContainer.appendChild(card);
     }
 

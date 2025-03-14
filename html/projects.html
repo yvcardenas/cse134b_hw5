@@ -7,6 +7,11 @@
         <link rel="stylesheet" href="../css/styles.css" media="screen">
         <link rel="stylesheet" href="/css/projects.css" media="screen">
         <script src="/js/theme.js" defer></script>
+
+        <!-- CustomElement for projects cards -->
+        <script src="/js/projects-card.js" defer></script>
+        <script src="/js/projects.js" defer></script>
+        
         <!-- Custome Font from Google Fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,33 +48,40 @@
         <main>
             <section>
                 <h2>Projects</h2>
-                <ul>
-                    <li>
-                        <h3>Developer Journal</h3>
-                        <a href="https://github.com/yvcardenas/developer_journal" target="_blank">
-                            <div class="img-wrapper">
-                                <img src="../media/developer-journal.jpg" alt="Developer Journal Screenshot">
-                            </div>
-                        </a>
-                        <div class="project-details">
-                            <h3>Project Description</h3>
-                            <p>An interactive, space-themed task management application designed to enhance productivity.</p>
-
-                        </div>
-                    </li>
-                    <li>
-                        <h3>Entertainment Recommender</h3>
-                        <a href="https://github.com/yvcardenas/entertainment_recommender" target="_blank">
-                            <div class="img-wrapper">
-                                <img src="../media/entertainment-recommender.jpg" alt="Entertainment Recommender Screenshot">
-                            </div>
-                        </a>
-                        <div class="project-details">
-                            <h3>Project Description</h3>
-                            <p>A personalized entertainment recommender app using Python, Flask, and OpenAI's API.</p>
-                        </div>
-                    </li>
-                </ul>
+                    <div id="projects-container">
+                    <noscript>
+                        <p style="color: red; font-weight: bold; text-align: center;">
+                            JavaScript is required to display projects dynamically. Please enable JavaScript to view the latest projects.
+                        </p>
+                        <ul>
+                            <li>
+                                <h3>Developer Journal</h3>
+                                <a href="https://github.com/yvcardenas/developer_journal" target="_blank">
+                                    <div class="img-wrapper">
+                                        <img src="../media/developer-journal.jpg" alt="Developer Journal Screenshot">
+                                    </div>
+                                </a>
+                                <div class="project-details">
+                                    <h3>Project Description</h3>
+                                    <p>An interactive, space-themed task management application designed to enhance productivity.</p>
+        
+                                </div>
+                            </li>
+                            <li>
+                                <h3>Entertainment Recommender</h3>
+                                <a href="https://github.com/yvcardenas/entertainment_recommender" target="_blank">
+                                    <div class="img-wrapper">
+                                        <img src="../media/entertainment-recommender.jpg" alt="Entertainment Recommender Screenshot">
+                                    </div>
+                                </a>
+                                <div class="project-details">
+                                    <h3>Project Description</h3>
+                                    <p>A personalized entertainment recommender app using Python, Flask, and OpenAI's API.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </noscript>
+                </div>
             </section>
         </main>
         <footer>

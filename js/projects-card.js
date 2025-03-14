@@ -54,7 +54,7 @@ class ProjectsCard extends HTMLElement {
         return ['title', 'description', 'link', 'image'];
     }
 
-    attributesChangedCallback(name, oldValue, newValue){
+    attributeChangedCallback(name, oldValue, newValue){
         if(name === 'title'){
             this.shadowRoot.querySelector('h2').textContent = newValue;
         } else if(name === 'description'){

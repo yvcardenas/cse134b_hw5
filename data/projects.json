@@ -1,14 +1,14 @@
 [
     {
         "title": "Developer Journal",
-        "description": "",
-        "image": "",
-        "link": ""
+        "image": "../media/developer-journal.jpg",
+        "description": "An interactive, space-themed task management app.",
+        "link": "https://github.com/yvcardenas/developer_journal"
     },
     {
         "title": "Entertainment Recommender",
-        "description": "",
-        "image": "",
-        "link": ""
+        "image": "../media/entertainment-recommender.jpg",
+        "description": "A recommender app using Python, Flask, and OpenAI's API.",
+        "link": "https://github.com/yvcardenas/entertainment_recommender"
     }
 ]
