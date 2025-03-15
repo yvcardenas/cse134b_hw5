@@ -1,6 +1,25 @@
 // Implement a custom element for the projects page that fetches and displays the projects from the API
 // BIN ID:67d4f06a8561e97a50ec3c40
 // API KEY: $2a$10$aYhoasD1nvzFKDwjbclWfOVJPCKONJHy0.aEv4ncm5w8HyK0dyDRG 
+const sampleProjects = [
+    {
+        title: "Developer Journal",
+        description: "An interactive, space-themed task management app.",
+        image: "../media/developer-journal.jpg",
+        link: "https://github.com/yvcardenas/developer_journal"
+    },
+    {
+        title: "Entertainment Recommender",
+        description: "A personalized entertainment recommender app using AI.",
+        image: "../media/entertainment-recommender.jpg",
+        link: "https://github.com/yvcardenas/entertainment_recommender"
+    }
+];
+
+// Only set default projects if none exist in localStorage
+if (!localStorage.getItem("projects")) {
+    localStorage.setItem("projects", JSON.stringify(sampleProjects));
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const projectsContainer = document.querySelector('#projects-container');
@@ -9,7 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // JSONBIN API Credentials
     const binID = '67d4f06a8561e97a50ec3c40';
-    const apiKey = '$2a$10$aYhoasD1nvzFKDwjbclWfOVJPCKONJHy0.aEv4ncm5w8HyK0dyDRG';
+    const apiMasterKey = '$2a$10$lTc3bE5Lx9LZG9uyGXPp7uvCkzxK6v0KuBluOviDlgaIxH.86V.6.';
+    const apiAccessKey = '$2a$10$aYhoasD1nvzFKDwjbclWfOVJPCKONJHy0.aEv4ncm5w8HyK0dyDRG';
     const jsonBinURL = `https://api.jsonbin.io/b/${binID}/latest`;
 
     function createProjectCard(project){
@@ -32,15 +52,23 @@ document.addEventListener('DOMContentLoaded', () => {
     async function fetchRemoteProjects(){
         try {
             const response = await fetch(jsonBinURL, {
+                method: 'GET',
                 headers: {
-                    'X-Master-Key': apiKey
+                    'X-Master-Key': apiMasterKey,
+                    'X-Access-Key': apiAccessKey,
+                    'Content-Type': 'application/json' 
                 }
             });
             if(!response.ok){
                 throw new Error('Failed to fetch remote projects');
             }
             const data = await response.json();
-            localStorage.setItem('projects', JSON.stringify(data.projects));
+            
+            if (!data.record || !Array.isArray(data.record)) {
+                throw new Error("Invalid data format received from JSONBin.");
+            }
+
+            localStorage.setItem('projects', JSON.stringify(data.record));
             projectsContainer.innerHTML = ''; // Clearing the previous content to start fresh
             data.record.forEach(createProjectCard);
         } catch (error) {
