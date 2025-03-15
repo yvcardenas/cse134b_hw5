@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // JSONBIN API Credentials
     const binID = '67d4f06a8561e97a50ec3c40';
     const apiMasterKey = '$2a$10$lTc3bE5Lx9LZG9uyGXPp7uvCkzxK6v0KuBluOviDlgaIxH.86V.6.';
-    const apiAccessKey = '$2a$10$aYhoasD1nvzFKDwjbclWfOVJPCKONJHy0.aEv4ncm5w8HyK0dyDRG';
-    const jsonBinURL = `https://api.jsonbin.io/b/${binID}/latest`;
+    // const apiAccessKey = '$2a$10$aYhoasD1nvzFKDwjbclWfOVJPCKONJHy0.aEv4ncm5w8HyK0dyDRG';
+    const jsonBinURL = `https://api.jsonbin.io/v3/b/${binID}/latest`;
 
     function createProjectCard(project){
         const card = document.createElement('projects-card');
@@ -54,16 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(jsonBinURL, {
                 method: 'GET',
                 headers: {
-                    'X-Master-Key': apiMasterKey,
-                    'X-Access-Key': apiAccessKey,
-                    'Content-Type': 'application/json' 
+                    'X-Master-Key': apiMasterKey
                 }
             });
             if(!response.ok){
                 throw new Error('Failed to fetch remote projects');
             }
             const data = await response.json();
-            
+
             if (!data.record || !Array.isArray(data.record)) {
                 throw new Error("Invalid data format received from JSONBin.");
             }
