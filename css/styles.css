@@ -137,7 +137,7 @@ input:checked + .slider .toggle-icon {
     cursor: pointer;
     width: 2rem;
     height: 2rem;
-    padding-right: 2em;
+    padding: 0 1rem;
 }
 
 #menu-toggle{
