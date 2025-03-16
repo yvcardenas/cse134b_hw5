@@ -20,13 +20,14 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-right: 2em;
+    padding-right: 2rem;
     font-size: 1.5em;
 }
 
 .typewriter {
     width: 0;
     max-width: 100%;
+    height: auto;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid var(--text-color);
@@ -77,4 +78,11 @@ main{
         flex: 0 0 auto;
         padding: 2em;
     }
+}
+
+@media (max-height: 600px) {
+    main{
+        height: auto;
+    }
+    
 }
