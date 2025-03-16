@@ -1,0 +1,25 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+error-container {
+    height: 70vh;
+    width: 70vw;
+    text-align: center;
+    padding: 3rem;
+    margin: auto;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+    .error-container img {
+        max-width: 100%;  /* Image gets smaller for smaller screens */
+        max-height: auto;
+    }
+}

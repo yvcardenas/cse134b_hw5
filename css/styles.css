@@ -160,6 +160,14 @@ body{
     color: var(--text-color);
 }
 
+footer{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
 /* Media Queries for MOBILE */
 @media (max-width: 1000px) {
     .menu-icon{
