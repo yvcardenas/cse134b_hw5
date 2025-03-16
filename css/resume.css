@@ -29,11 +29,3 @@ section:has(h2, h3) {
         flex-direction: column;
     }
 }
-
-footer{
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-}
